@@ -66,13 +66,8 @@ if (newCity) {
 
       data = await getFiveThreeData(latitude, longitude)
 
-      console.log(data)
-      console.log(rawNewCityData);
-
-
 
       const dataObject = data
-      console.log(dataObject)
 
       let day0Card = document.querySelector('#day-0')
       let day1Card = document.querySelector('#day-1')
@@ -89,7 +84,6 @@ if (newCity) {
       assignDayValues(4, dataObject.Day4)
 
       let hourValDay0 = Object.values(dataObject.Day0).slice(4)
-      console.log(hourValDay0)
       let hourValDay1 = Object.values(dataObject.Day1).slice(4)
       let hourValDay2 = Object.values(dataObject.Day2).slice(4)
       let hourValDay3 = Object.values(dataObject.Day3).slice(4)
@@ -161,8 +155,6 @@ if (newCity) {
       newtWeatherData.push(newVisibility);
       newtWeatherData.push(newHumidity);
 
-      console.log(newtWeatherData);
-
       document.getElementById("city-name").innerHTML = newtWeatherData[0];
       document.getElementById("main-temp").innerHTML = newtWeatherData[1];
       document.getElementById("current-condition").innerHTML = newtWeatherData[2];
@@ -184,8 +176,6 @@ const rawCurrentWeatherData = await fetchDataCurrentWeather(`https://api.openwea
 
 export default { data }
 
-
-console.log(rawCurrentWeatherData);
 // gather all the variables from the api
 let currentWeather = rawCurrentWeatherData && rawCurrentWeatherData.weather ? rawCurrentWeatherData.weather[0].main : null;
 let currentTemp = rawCurrentWeatherData && rawCurrentWeatherData.main ? rawCurrentWeatherData.main.temp : null;
@@ -205,8 +195,6 @@ currentWeatherData.push(currentWindDirection);
 currentWeatherData.push(currentWindSpeed);
 currentWeatherData.push(currentVisibility);
 currentWeatherData.push(currtenHumidity);
-
-console.log(currentWeatherData);
 
 //--------------------------------------------------------------------
 // create Current Weather in HTML

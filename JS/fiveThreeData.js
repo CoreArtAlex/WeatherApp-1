@@ -78,8 +78,6 @@ export default async function getFiveThreeData(lat, long) {
   const currentTimestamp = new Date(rawFiveThreeData.list[0].dt * 1000)
   const currentDay = currentTimestamp.getDate()
 
-  console.log(rawFiveThreeData)
-
   rawFiveThreeData.list.forEach((element) => {
 
     let date = new Date(element.dt * 1000)
